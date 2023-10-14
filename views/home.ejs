@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Home Page</title>
+
+    <link rel="stylesheet" type="text/html" href="../public/css/styles.css">
+</head>
+<body>
+    <style>
+        body, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color and font styles for the whole page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+/* Style the heading */
+h1 {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+/* Style the product container */
+.product-container {
+    list-style: none;
+    list-style-type: none;
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Style the individual product items */
+.product-container li {
+    list-style: none;
+    list-style-type: none;
+    text-decoration: none;
+
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 300px;
+    text-align: center;
+}
+
+/* Add a hover effect on the product items */
+.product-container li:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.02);
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+    </style>
+    <h1>Welcome to our Online Store</h1>
+    <ul class="product-container">
+        
+        <% products.find(function(product) { %>
+            <!-- <li><%= product.name %></li> -->
+            <li><a href="/products/<%= product.id %>"><%= product.name %></a></li>
+
+        <% }); %>
+    </ul>
+</body>
+</html>
+
+<!-- <% products.forEach(function(product) { %>
+            <=!-- <a href="/" class="product-name"><%= product.name %></a> --=>
+            <li><%= product.name %></li>
+
+        <% }); %> -->
